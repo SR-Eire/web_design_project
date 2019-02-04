@@ -1,0 +1,40 @@
+/* CSS for the body of the website with an rgba background to offer some opacity,
+no margin, color selection, and font family */
+body {
+  background: rgba(0, 0, 0, 0.9);
+  margin: 0;
+  color: #fff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* CSS for background image and blur effect using a CSS psuedo element called after to insert into 
+the CSS without the element being in the DOM but allows it to be styled as if it were
+content left blank, height will take up the entire screen based on the browser using viewport height (vh)
+width set to 100%, background image linked, background size set to cover(The background-size property specifies the size of the background images.
+Cover will resize the background image to cover the entire container, even if it has to stretch the image or cut a 
+little bit off one of the edges), background repeat set to no repeat(The background-repeat property sets 
+if/how a background image will be repeated.By default, a background-image is repeated both vertically and horizontally),
+position center. The display property specifies the display behavior (the type of rendering box) of an element(Block 
+Displays an element as a block element (like <p>). It starts on a new line, and takes up the whole width).
+The filter property defines visual effects (like blur and saturation) to an element (often <img>)(Applies a blur effect to the image.
+A larger value will create more blur). WebKit is a layout engine designed to allow web browsers to render web pages(used
+here to ensure blur on all browsers). Transition for blur filter in 1 second. */
+.showcase::after {
+  content: "";
+  height: 100vh;
+  width: 100%;
+  background-image: url(../img/showcase.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+  filter: blur(10px);
+  -webkit-filter: blur(10px);
+  transition: all 1000ms;
+}
+
+/* Adding hover effect so when your pointer is on the item the blur will sharpen */
+.showcase:hover::after {
+  filter: blur(0px);
+  -webkit-filter: blur(0px);
+}
