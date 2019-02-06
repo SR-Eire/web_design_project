@@ -38,3 +38,152 @@ here to ensure blur on all browsers). Transition for blur filter in 1 second. */
   filter: blur(0px);
   -webkit-filter: blur(0px);
 }
+
+/* This will blur the content when the image is sharpened */
+.showcase:hover .content {
+  filter: blur(1px);
+  -webkit-filter: blur(1px);
+}
+
+/* CSS for the content The position property specifies the type of positioning 
+method used for an element (static, relative, absolute, fixed, or sticky).
+For absolute The element is positioned relative to its first positioned (not static) ancestor element
+Z-index bring the content to the forefront ahead of the showcase. */
+.content {
+  position: absolute;
+  z-index: 1;
+  top: 10%;
+  left: 50%;
+  margin-top: 75px;
+  margin-left: -145px;
+  width: 300px;
+  height: 350px;
+  text-align: center;
+  transition: all 1000ms;
+}
+
+.content .logo {
+  height: 180px;
+  width: 180px;
+}
+
+/* Content title size using rem units, rem units are measrued based on the pixel size of the
+html element which by default is 16px so below is 2.5 x 16 */
+.content .title {
+  font-family: "Great Vibes", Helvetica, sans-serif;
+  font-size: 3.5rem;
+  margin-top: 2px;
+}
+
+/* Styling of the content text */
+.content .text {
+  line-height: 1.7;
+  margin-top: 1rem;
+}
+
+/* The max-width property defines the maximum width of an element. 
+Margin auto to push the container to the middle. The overflow property specifies what 
+should happen if content overflows an element's box(Hidden means the overflow is clipped, 
+and the rest of the content will be invisible).4rem padding on top and bottom, 1rem left and right.*/
+.container {
+  max-width: 960px;
+  margin: auto;
+  overflow: hidden;
+  padding: 4rem 1rem;
+}
+
+/* Display as a grid with a repeat of 4 even fractionals or horizontal columns, with a gap of 20px between columns */
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 22.5px;
+}
+
+/* Display as a grid with a repeat of 2 even fractionals or horizontal columns, with a gap of 20px between columns */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+/* Text alignment */
+.center {
+  text-align: center;
+  margin: auto;
+}
+
+/* Utility class to change backround colour and text colour */
+.bg-light {
+  background: #f4f4f4;
+  color: #333;
+}
+
+/* Utility class to change backround colour and text colour */
+.bg-dark {
+  background: #333;
+  color: #f4f4f4;
+}
+
+/* Footer padding */
+footer {
+  padding: 2.2rem;
+}
+
+/* Removing default paragraph margin */
+.footer p {
+  margin: 0;
+}
+
+/* Small Screens */
+/* Changing to take up half of what was taken up on a full screen */
+@media (max-width: 560px) {
+  .showcase::after {
+    height: 50vh;
+  }
+
+  /* Adjusting content for smaller screen */
+  .content {
+    top: 5%;
+    margin-top: 5px;
+  }
+
+  /* Removing content logo for smaller screen */
+  .content .logo {
+    visibility: hidden;
+  }
+
+  /* Adjusting content title for smaller screen */
+  .content .title {
+    font-size: 2.5rem;
+    margin-top: 20px;
+  }
+
+  /* Adjusting content text for smaller screen */
+  .content .text {
+    display: none;
+  }
+
+  /* Rearranging grids for smaller screen by dropping down to single grids stacked on top of eachother */
+  .grid-4,
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Border to separate grids on smaller screens */
+  .services div {
+    border-bottom: #333 solid 2px;
+    padding: 1rem 2rem;
+  }
+}
+
+/* Landscape CSS*/
+@media (max-height: 500px) {
+  .content .title,
+  .content .text {
+    display: none;
+  }
+
+  .content {
+    top: 0;
+  }
+}
