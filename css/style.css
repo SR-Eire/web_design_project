@@ -7,6 +7,42 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.navbar {
+  width: 100%;
+  padding: 0.75rem;
+}
+
+.navbar,
+ul {
+  list-style-type: none;
+}
+
+li {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.1rem;
+  display: inline;
+  padding: 10px;
+  border-right: 3px solid #333;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li,
+a {
+  text-decoration: none;
+  color: #f4f4f4;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.active {
+  border-bottom: 2px solid #333;
+}
+
 /* CSS for background image and blur effect using a CSS psuedo element called after to insert into 
 the CSS without the element being in the DOM but allows it to be styled as if it were
 content left blank, height will take up the entire screen based on the browser using viewport height (vh)
@@ -106,6 +142,27 @@ and the rest of the content will be invisible).4rem padding on top and bottom, 1
   grid-gap: 20px;
 }
 
+/* Styling for buttons on homepage */
+.btn {
+  text-decoration: none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+  background-color: #333333;
+  color: #fff;
+  padding-top: 0.5rem;
+  padding-right: 1rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  border: solid #f4f4f4 1px;
+  border-radius: 3px;
+}
+
+.btn:hover {
+  background-color: darkgray;
+  color: #f4f4f4;
+  text-decoration: none;
+}
+
 /* Text alignment */
 .center {
   text-align: center;
@@ -185,5 +242,9 @@ footer {
 
   .content {
     top: 0;
+  }
+
+  ul {
+    visibility: hidden;
   }
 }
