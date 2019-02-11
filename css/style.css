@@ -7,40 +7,39 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Add a black background color to the top navigation */
 .navbar {
-  width: 100%;
-  padding: 0.75rem;
-}
-
-.navbar,
-ul {
-  list-style-type: none;
-}
-
-li {
+  background-color: #333;
+  overflow: hidden;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 1.1rem;
-  display: inline;
-  padding: 10px;
-  border-right: 3px solid #333;
 }
 
-li:last-child {
-  border-right: none;
-}
-
-li,
-a {
-  text-decoration: none;
+/* Style the links inside the navigation bar */
+.navbar a {
+  float: left;
+  display: block;
   color: #f4f4f4;
+  text-align: center;
+  padding: 20px 16px;
+  text-decoration: none;
+  font-size: 17px;
 }
 
-a:hover {
+/* Change the color of links on hover */
+.navbar a:hover {
+  background-color: #333;
+  columns: #f4f4f4;
   text-decoration: underline;
 }
 
+/* Add an active class to highlight the current page */
 .active {
-  border-bottom: 2px solid #333;
+  background-color: darkgrey;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.navbar .icon {
+  display: none;
 }
 
 /* CSS for background image and blur effect using a CSS psuedo element called after to insert into 
@@ -98,6 +97,7 @@ Z-index bring the content to the forefront ahead of the showcase. */
   transition: all 1000ms;
 }
 
+/* Logo position and size */
 .content .logo {
   height: 180px;
   width: 180px;
@@ -163,7 +163,7 @@ and the rest of the content will be invisible).4rem padding on top and bottom, 1
   text-decoration: none;
 }
 
-/* Text alignment */
+/* Text alignment for footer */
 .center {
   text-align: center;
   margin: auto;
@@ -211,8 +211,8 @@ footer {
 
   /* Adjusting content title for smaller screen */
   .content .title {
-    font-size: 2.5rem;
-    margin-top: 20px;
+    font-size: 1.75rem;
+    margin-top: 100px;
   }
 
   /* Adjusting content text for smaller screen */
@@ -230,6 +230,35 @@ footer {
   .services div {
     border-bottom: #333 solid 2px;
     padding: 1rem 2rem;
+    margin-top: 5px;
+  }
+}
+
+/* When the screen is less than 600 pixels wide, hide all links. Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 560px) {
+  .navbar a {
+    display: none;
+  }
+  .navbar a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 560px) {
+  .navbar.responsive {
+    position: relative;
+  }
+  .navbar.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .navbar.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
   }
 }
 
@@ -242,9 +271,5 @@ footer {
 
   .content {
     top: 0;
-  }
-
-  ul {
-    visibility: hidden;
   }
 }

@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Link to external JavaScript file -->
+    <script src="js/navbar.js" type="text/javascript"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
@@ -15,20 +21,22 @@
       href="https://fonts.googleapis.com/css?family=Great Vibes"
       rel="stylesheet"
     />
-    <!--link to external stylesheet-->
+    <!--link to external stylesheet file -->
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <title>Document</title>
+    <title>Rick Sanchez Photography | Home</title>
   </head>
   <body>
-    <section class="center navbar">
-      <ul>
-        <li><a class="active" href="index.html">Home</a></li>
-        <li><a href="index.html">Shop</a></li>
-        <li><a href="index.html">Hire Me</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="index.html">Contact</a></li>
-      </ul>
-    </section>
+    <!-- Navbar at top of the page -->
+    <div class="navbar" id="myTopnav">
+      <a href="index.html" class="active">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="hireme.html">Hire Me</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
     <!--Header with a class of showcase-->
     <header class="showcase">
       <!--div with a class of content-->
@@ -56,7 +64,7 @@
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, eos.
           </p>
-          <a class="btn" type="button" href="gallery.html">Shop</a>
+          <a class="btn" type="button" href="shop.html">Shop</a>
         </div>
         <div>
           <!--Icon with a youtube icon class from fontawesome-->
@@ -65,7 +73,7 @@
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, eos.
           </p>
-          <a class="btn" type="button" href="gallery.html">Hire Me</a>
+          <a class="btn" type="button" href="hireme.html">Hire Me</a>
         </div>
         <div>
           <!--Icon with an images icon class from fontawesome-->
@@ -83,7 +91,7 @@
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, eos.
           </p>
-          <a class="btn" type="button" href="gallery.html">Contact</a>
+          <a class="btn" type="button" href="contact.html">Contact</a>
         </div>
       </div>
     </section>
