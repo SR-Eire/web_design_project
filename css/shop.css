@@ -1,4 +1,4 @@
-/* CSS for the body of the website with an rgba background to offer some opacity,
+/* CSS for the body of the website with an rgba background,
 no margin, color selection, and font family */
 body {
   background: #f4f4f4;
@@ -40,6 +40,19 @@ body {
 /* Hide the link that should open and close the topnav on small screens */
 .navbar .icon {
   display: none;
+}
+
+.w3-panel {
+  padding: 50px 16px;
+}
+
+.w3-main {
+  max-width: 1200px;
+  margin-top: 50px;
+}
+
+img {
+  width: 100%;
 }
 
 /* Styling for buttons on ShoP page */

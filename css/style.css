@@ -1,4 +1,4 @@
-/* CSS for the body of the website with an rgba background to offer some opacity,
+/* CSS for the body of the website with an rgba background,
 no margin, color selection, and font family */
 body {
   background: rgba(0, 0, 0, 0.9);
