@@ -4,7 +4,153 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <!-- W3CSS stylesheet link -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <!-- FontAwesome stylesheet links -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <!--Google fonts link-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Great Vibes"
+      rel="stylesheet"
+    />
+    <!--link to external stylesheet file -->
+    <link rel="stylesheet" type="text/css" href="css/contact.css" />
+    <title>Rick Sanchez Photography | Contact</title>
   </head>
-  <body></body>
+  <body onload="typeWriter()">
+    <!-- Navbar at top of page -->
+    <div class="navbar" id="myTopnav">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="hireme.html">Hire Me</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <!-- Header -->
+    <header class="w3-panel w3-center w3-opacity">
+      <h1 class="w3-xlarge" id="contact"></h1>
+      <h1>Rick Sanchez</h1>
+    </header>
+    <!-- Start od contact form and company information -->
+    <div class="container">
+      <div style="text-align:center">
+        <h2>Contact Me</h2>
+        <p>Any job considered so please don't hesitate to contact me</p>
+      </div>
+      <div class="row">
+        <div class="column">
+          <form action="/action_page.php">
+            <label for="fname"><strong>First Name</strong></label>
+            <input
+              type="text"
+              id="fname"
+              name="firstname"
+              placeholder="Your name.."
+            />
+            <label for="lname"><strong>Last Name</strong></label>
+            <input
+              type="text"
+              id="lname"
+              name="lastname"
+              placeholder="Your last name.."
+            />
+            <label for="email"><strong>Email</strong></label>
+            <input
+              type="text"
+              placeholder="exaple@mail.com"
+              name="email"
+              required
+            />
+            <label for="party"><strong>Party Type</strong></label>
+            <select id="party" name="party">
+              <option value="wedding">Wedding</option>
+              <option value="birthday">Birthday</option>
+              <option value="baptism">Baptism</option>
+              <option value="other">Other</option>
+            </select>
+            <label for="website"><strong>Need Website:</strong></label>
+            <div>
+              <input type="radio" name="question" value="yes" />
+              Yes
+              <input type="radio" name="question" value="no" />
+              No
+              <input type="radio" name="question" value="possibly" />
+              Possibly
+            </div>
+            <br />
+            <label for="province"><strong>Where you are</strong></label>
+            <select id="province" name="where">
+              <option value="leinster">Leinster</option>
+              <option value="munster">Munster</option>
+              <option value="connacht">Connacht</option>
+              <option value="ulster">Ulster</option>
+            </select>
+            <label for="album"><strong>Album Type:</strong></label>
+            <div>
+              <input type="checkbox" name="question" value="photo" />
+              Photo Album
+              <input type="checkbox" name="question" value="usb" />
+              USB
+            </div>
+            <br />
+            <label for="subject"><strong>Subject</strong></label>
+            <textarea
+              id="subject"
+              name="subject"
+              placeholder="Write something.."
+              style="height:170px"
+            ></textarea>
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
+        <div id="map" class="column"></div>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h1>Rick Sanchez</h1>
+              <p>Photographer & Web Designer</p>
+              <p><strong>Phone:</strong> 0123456789</p>
+              <p><strong>Email:</strong> rsphotography@mail.com</p>
+              <p>
+                <strong>Address:</strong> 1234 Way, Dublin City Centre, Ireland
+              </p>
+            </div>
+            <div class="flip-card-back">
+              <h1>Rick Sanchez</h1>
+              <p>Photographer & Web Designer</p>
+              <p><strong>Phone:</strong> 0123456789</p>
+              <p><strong>Email:</strong> rsphotography@mail.com</p>
+              <p>
+                <strong>Address:</strong> 1234 Way, Dublin City Centre, Ireland
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Footer with a class of center bg-dark-->
+    <footer class="center bg-dark">
+      <p>
+        Stephen Roberts &copy; 2019
+      </p>
+    </footer>
+    <!-- Link to external JavaScript file -->
+    <script src="js/navbar.js" type="text/javascript"></script>
+    <!-- Link to external JavaScript file for Google map -->
+    <script src="js/map.js" type="text/javascript"></script>
+    <!-- Link to external JavaScript file for typing effect -->
+    <script src="js/typewritercontact.js" type="text/javascript"></script>
+  </body>
 </html>
