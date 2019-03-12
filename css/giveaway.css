@@ -1,9 +1,9 @@
 /* CSS for the body of the website with an rgba background,
 no margin, color selection, and font family */
 body {
-  background: #f4f4f4;
+  background: rgba(0, 0, 0, 0.9);
   margin: 0;
-  color: #333;
+  color: #fff;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -42,20 +42,42 @@ body {
   display: none;
 }
 
-.w3-content {
-  max-width: 1500px;
+/* The max-width property defines the maximum width of an element. 
+  Margin auto to push the container to the middle. The overflow property specifies what 
+  should happen if content overflows an element's box(Hidden means the overflow is clipped, 
+  and the rest of the content will be invisible).4rem padding on top and bottom, 1rem left and right.*/
+.container {
+  max-width: 960px;
+  margin: auto;
+  overflow: hidden;
+  padding: 4rem 1rem;
 }
 
-.w3-panel {
-  padding: 50px 16px;
+/* Styling for buttons on homepage */
+.btn {
+  text-decoration: none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+  background-color: #333333;
+  color: #fff;
+  padding-top: 0.5rem;
+  padding-right: 1rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  border: solid #f4f4f4 1px;
+  border-radius: 3px;
 }
 
-.w3-row-padding {
-  margin-bottom: 128px;
+.btn:hover {
+  background-color: darkgray;
+  color: #f4f4f4;
+  text-decoration: none;
 }
 
-img {
-  width: 100%;
+/* Text alignment for footer */
+.center {
+  text-align: center;
+  margin: auto;
 }
 
 /* Utility class to change backround colour and text colour */
@@ -70,16 +92,10 @@ img {
   color: #f4f4f4;
 }
 
-/* Text alignment for footer*/
-.center {
-  text-align: center;
-  margin: auto;
-}
-
-/* Footer padding */
+/* Footer */
 footer {
   padding: 2.2rem 0;
-  position: relative;
+  position: fixed;
   width: 100%;
   left: 0;
   bottom: 0;
@@ -91,12 +107,6 @@ footer {
   margin: 0;
 }
 
-/* Margin to separate buttons and images */
-@media screen and (max-width: 560px) {
-  .w3-quarter {
-    margin-top: 20px;
-  }
-}
 /* When the screen is less than 560 pixels wide, hide all links. Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 560px) {
   .navbar a {
@@ -122,17 +132,5 @@ footer {
     float: none;
     display: block;
     text-align: left;
-  }
-}
-
-/* Landscape CSS*/
-@media (max-height: 500px) {
-  .content .title,
-  .content .text {
-    display: none;
-  }
-
-  .content {
-    top: 0;
   }
 }

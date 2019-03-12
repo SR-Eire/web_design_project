@@ -1,8 +1,7 @@
 var i, contact, speed;
 
 i = 0;
-contact =
-  "There is no question too big or small, please contact me below!!"; /* The text */
+contact = "Please Contact Me Below With Any Queries"; /* The text */
 speed = 100; /* The speed/duration of the effect in milliseconds */
 
 function typeWriter() {

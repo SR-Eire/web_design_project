@@ -181,9 +181,14 @@ and the rest of the content will be invisible).4rem padding on top and bottom, 1
   color: #f4f4f4;
 }
 
-/* Footer padding */
+/* Footer */
 footer {
-  padding: 2.2rem;
+  padding: 2.2rem 0;
+  position: relative;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
 
 /* Removing default paragraph margin */
@@ -234,7 +239,7 @@ footer {
   }
 }
 
-/* When the screen is less than 600 pixels wide, hide all links. Show the link that contains should open and close the topnav (.icon) */
+/* When the screen is less than 560 pixels wide, hide all links. Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 560px) {
   .navbar a {
     display: none;
@@ -259,17 +264,5 @@ footer {
     float: none;
     display: block;
     text-align: left;
-  }
-}
-
-/* Landscape CSS*/
-@media (max-height: 500px) {
-  .content .title,
-  .content .text {
-    display: none;
-  }
-
-  .content {
-    top: 0;
   }
 }

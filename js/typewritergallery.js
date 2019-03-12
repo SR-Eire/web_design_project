@@ -1,7 +1,7 @@
 var i, gallery, speed;
 
 i = 0;
-gallery = "Here you can check out some of my previous work!!"; /* The text */
+gallery = "Please Check Out Some Of My Work Below"; /* The text */
 speed = 100; /* The speed/duration of the effect in milliseconds */
 
 function typeWriter() {

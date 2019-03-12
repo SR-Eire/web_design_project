@@ -1,7 +1,7 @@
 var i, shop, speed;
 
 i = 0;
-shop = "Welcome to the shop section of my site!!"; /* The text */
+shop = "And Welcome To My Photography Shop"; /* The text */
 speed = 100; /* The speed/duration of the effect in milliseconds */
 
 function typeWriter() {

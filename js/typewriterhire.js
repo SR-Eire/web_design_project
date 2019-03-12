@@ -1,7 +1,7 @@
 var i, hire, speed;
 
 i = 0;
-hire = "Here is a breakdown of what I charge €€"; /* The text */
+hire = "Rick Sanchez Photography For Hire"; /* The text */
 speed = 100; /* The speed/duration of the effect in milliseconds */
 
 function typeWriter() {

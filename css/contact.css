@@ -91,7 +91,7 @@ body {
   backface-visibility: hidden;
 }
 
-/* Style the front side (fallback if image is missing) */
+/* Style the front side  */
 .flip-card-front {
   background-color: #333;
   color: #f4f4f4;
@@ -176,7 +176,12 @@ input[type="submit"]:hover {
 
 /* Footer padding */
 footer {
-  padding: 2.2rem;
+  padding: 2.2rem 0;
+  position: relative;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
 
 /* Removing default paragraph margin */
