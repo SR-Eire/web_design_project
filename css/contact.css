@@ -28,7 +28,7 @@ body {
 /* Change the color of links on hover */
 .navbar a:hover {
   background-color: #333;
-  columns: #f4f4f4;
+  color: #f4f4f4;
   text-decoration: underline;
 }
 
@@ -64,7 +64,8 @@ body {
   padding: 20px;
   width: 50%;
   height: 280px;
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  perspective: 1000px;
+  /* Remove this if you don't want the 3D effect */
 }
 
 /* This container is needed to position the front and back side */
@@ -191,6 +192,7 @@ footer {
 
 /* Responsive layout - when the screen is less than 560px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 560px) {
+
   .column,
   input[type="submit"] {
     width: 100%;
@@ -215,6 +217,7 @@ footer {
   .navbar a {
     display: none;
   }
+
   .navbar a.icon {
     float: right;
     display: block;
@@ -226,11 +229,13 @@ footer {
   .navbar.responsive {
     position: relative;
   }
+
   .navbar.responsive a.icon {
     position: absolute;
     right: 0;
     top: 0;
   }
+
   .navbar.responsive a {
     float: none;
     display: block;

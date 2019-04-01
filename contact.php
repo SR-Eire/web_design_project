@@ -1,3 +1,69 @@
+<?php
+
+	$error = ""; $successMessage = "";
+  // Check for POST variables
+	if ($_POST){
+	// Check for empty firstname
+		if(!$_POST["firstname"]){
+		
+			$error .= "Your first name is required.<br />";
+		
+    }
+    // Check for empty lastname
+    if(!$_POST["lastname"]){
+		
+			$error .= "Your last name is required.<br />";
+		
+		}
+		// Check for empty email
+		if(!$_POST["email"]){
+		
+			$error .= "Your email is required.<br />";
+		
+    }
+		// Check for empty subject
+		if(!$_POST["subject"]){
+		
+			$error .= "Your message is required.<br />";
+		
+		}
+		//Email validation built in function checking to see if email address is not valid
+		if (filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) == false) {
+      //Add to error string
+			$error .= "The email address is invalid.<br />";
+		}
+		//If there is an error message create the below html
+		if($error != "") {
+		
+			$error = '<div class="alert alert-danger" role="alert"><p><strong>There was an error(s) in your form:</strong></p>' . $error . '</div>';
+		
+		} else {
+			
+				$emailTo = "x13114760@student.ncirl.ie";
+				
+                $firstname = $_POST["firstname"];
+        
+                $lastname = $_POST["lastname"];
+        
+				$subject = $_POST["subject"];
+				
+				$headers = "From ".$_POST["email"];
+				
+				if (mail($emailTo, $firstname, $lastname, $subject, $headers)) {
+					
+					$successMessage = '<div class="alert alert-success" role="alert"><p>Your message has been submitted successfully</p></div>';
+					
+				} else {
+					
+					$error = '<div class="alert alert-danger" role="alert"><p>Your message could not be sent, please try again later</p></div>';
+					
+				}
+			
+			}
+	
+	}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,6 +71,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <!--link to external stylesheet file -->
+  <link rel="stylesheet" type="text/css" href="css/contact.css" />
   <!-- W3CSS stylesheet link -->
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
   <!-- FontAwesome stylesheet links -->
@@ -13,8 +81,6 @@
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
   <!--Google fonts link-->
   <link href="https://fonts.googleapis.com/css?family=Great Vibes" rel="stylesheet" />
-  <!--link to external stylesheet file -->
-  <link rel="stylesheet" type="text/css" href="css/contact.css" />
   <title>Rick Sanchez Photography | Contact</title>
 </head>
 
@@ -25,7 +91,7 @@
     <a href="shop.html">Shop</a>
     <a href="hireme.html">Hire Me</a>
     <a href="gallery.html">Gallery</a>
-    <a href="contact.html" class="active">Contact</a>
+    <a href="contact.php" class="active">Contact</a>
     <a href="giveaway.html">Giveaway</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
@@ -33,7 +99,7 @@
   </div>
   <!-- Header -->
   <header class="w3-panel w3-center w3-opacity">
-    <i class="fas fa-camera fa-2x logo"> RSP</i>
+  <i class="fas fa-camera fa-2x logo"> RSP</i>
     <!-- JavaScript Greeting -->
     <h1 id="greeting"></h1>
     <!-- JavaScript Typewriter Text -->
@@ -48,9 +114,11 @@
     <div class="row">
       <div class="column">
         <div id="error">
+          <!-- If there is a server side validation error, place it here -->
           <? echo $error.$successMessage; ?>
         </div>
-        <form id="contact-form" action="/php/contact.php" method="POST">
+        <form id="contact-form" method="POST">
+          <!-- Name gets passed through the POST variable on the server side -->
           <label for="fname"><strong>First Name</strong></label>
           <input type="text" id="fname" name="firstname" placeholder="Your name.." />
           <label for="lname"><strong>Last Name</strong></label>
@@ -125,7 +193,9 @@
       Stephen Roberts &copy; 2019
     </p>
   </footer>
+  <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
   <!-- Link to external JavaScript file -->
   <script src="js/navbar.js" type="text/javascript"></script>
   <!-- Link to external JavaScript file for Google map -->
@@ -135,60 +205,37 @@
   <!-- Link to external JavaScript file for greeting -->
   <script src="js/greeting.js" type="text/javascript"></script>
   <script type="text/javascript">
+  //Stop form submitting without validation
     $("#contact-form").submit(function (e) {
-
-
+      //Add to error string if fields are empty
       var error = "";
 
       if ($("#fname").val() == "") {
-
+        //Append to error string
         error += "Your first name is required.<br />";
 
       }
 
       if ($("#lname").val() == "") {
-
+        //Append to error string
         error += "Your last name is required.<br />";
 
       }
 
 
       if ($("#email").val() == "") {
-
+        //Append to error string
         error += "Your email is required.<br />";
 
       }
 
-      if ($("#party").val() == "") {
-
-        error += "Your party type is required.<br />";
-
-      }
-
-      if ($("#website").val() == "") {
-
-        error += "Do you require a website?<br />";
-
-      }
-
-      if ($("#province").val() == "") {
-
-        error += "Your location is required.<br />";
-
-      }
-
-      if ($("#album").val() == "") {
-
-        error += "Your album type is required.<br />";
-
-      }
 
       $("#error").html(error);
 
 
 
       if ($("#subject").val() == "") {
-
+        //Append to error string
         error += "Your message is required.";
 
       }
@@ -197,13 +244,11 @@
 
 
       if (error != "") {
-
+        //Set html for error
         $("#error").html(
           '<div class="alert alert-danger" role="alert"><p><strong>There was an error(s) in your form:</strong></p>' +
           error + '</div>');
 
-
-        return false;
 
       } else {
 

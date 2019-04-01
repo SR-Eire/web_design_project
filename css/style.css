@@ -42,6 +42,12 @@ body {
   display: none;
 }
 
+#nav-logo {
+  float: right;
+  margin-top: 15px;
+  margin-right: 50px;
+}
+
 /* CSS for background image and blur effect using a CSS psuedo element called after to insert into 
 the CSS without the element being in the DOM but allows it to be styled as if it were
 content left blank, height will take up the entire screen based on the browser using viewport height (vh)
@@ -244,6 +250,7 @@ footer {
   .navbar a {
     display: none;
   }
+
   .navbar a.icon {
     float: right;
     display: block;
@@ -255,11 +262,13 @@ footer {
   .navbar.responsive {
     position: relative;
   }
+
   .navbar.responsive a.icon {
     position: absolute;
     right: 0;
     top: 0;
   }
+
   .navbar.responsive a {
     float: none;
     display: block;
