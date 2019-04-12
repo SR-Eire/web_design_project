@@ -1,3 +1,9 @@
+/* Reference for some of the code on this page
+  """  Title: Traversy Media source code
+              Author: Traversy, Brad
+              Date: January 2019
+              Availability: https://www.youtube.com/watch?v=HZv8YHYUHTU&t=169s """*/
+
 /* CSS for the body of the website with an rgba background,
 no margin, color selection, and font family */
 body {
@@ -56,14 +62,23 @@ body {
   background-color: darkgray;
 }
 
+
+/* Reference for the flip card code on this page
+  """  Title: Online Tutorials source code
+              Author: Online Tutorials
+              Date: March 2019
+              Availability: https://www.youtube.com/watch?v=HZv8YHYUHTU&t=169 """*/
+
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flip-card {
+  /* Specifies that the background color should be transparent */
   background-color: transparent;
   float: left;
   margin-top: 6px;
   padding: 20px;
   width: 50%;
   height: 280px;
+  /* The perspective property is used to give a 3D-positioned element some perspective */
   perspective: 1000px;
   /* Remove this if you don't want the 3D effect */
 }
@@ -80,6 +95,8 @@ body {
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
 .flip-card:hover .flip-card-inner {
+  /* The transform property applies a 2D or 3D transformation to an element.
+    This property allows you to rotate, scale, move, skew, etc., elements */
   transform: rotateY(180deg);
 }
 
@@ -103,6 +120,7 @@ body {
 .flip-card-back {
   background-color: #f4f4f4;
   color: #333;
+  /* Defines a 3D rotation along the Y-axis */
   transform: rotateY(180deg);
   border-radius: 3px;
 }
@@ -205,6 +223,11 @@ footer {
 
   .flip-card {
     width: 100%;
+  }
+
+  .flip-card-inner,
+  h1 {
+    font-size: 14.4px;
   }
 
   #map {

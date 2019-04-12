@@ -71,6 +71,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <!-- Reference for some of the code on this page -->
+  <!-- """  Title: Traversy Media source code
+              Author: Traversy, Brad
+              Date: January 2019
+              Availability: https://www.youtube.com/watch?v=HZv8YHYUHTU&t=169s """ -->
+  <!-- Reference for some of the code on this page -->
+  <!-- """  Title: Udemy Course source code
+              Author: Rob Percival
+              Date: March 2019
+              Availability: https://www.udemy.com/the-complete-web-developer-course-2/ """ -->
+  <!--Reference for the flip card code on this page
+  """  Title: Online Tutorials source code
+              Author: Online Tutorials
+              Date: March 2019
+              Availability: https://www.youtube.com/watch?v=HZv8YHYUHTU&t=169 """ -->
+  <!--Reference for some of the code on this page
+/*"""  Title: Google source code
+              Author: Google
+              Date: April 2019
+              Availability: https://developers.google.com/maps/documentation/javascript/adding-a-google-map """ -->
   <!--link to external stylesheet file -->
   <link rel="stylesheet" type="text/css" href="css/contact.css" />
   <!-- W3CSS stylesheet link -->
@@ -124,7 +144,7 @@
           <label for="lname"><strong>Last Name</strong></label>
           <input type="text" id="lname" name="lastname" placeholder="Your last name.." />
           <label for="email"><strong>Email</strong></label>
-          <input type="text" placeholder="exaple@mail.com" name="email" required />
+          <input type="text" placeholder="example@mail.com" name="email" required />
           <label for="party"><strong>Party Type</strong></label>
           <select id="party" name="party">
             <option value="wedding">Wedding</option>
@@ -204,6 +224,23 @@
   <script src="js/typewritercontact.js" type="text/javascript"></script>
   <!-- Link to external JavaScript file for greeting -->
   <script src="js/greeting.js" type="text/javascript"></script>
+  <!-- Map functionality -->
+  <script>
+    // Initialize and add the map
+    function initMap() {
+      // The location of Uluru
+      var uluru = {lat: 53.349475, lng: -6.243104};
+      // The map, centered at Uluru
+      var map = new google.maps.Map(
+          document.getElementById('map'), {zoom: 15, center: uluru});
+      // The marker, positioned at Uluru
+      var marker = new google.maps.Marker({position: uluru, map: map});
+    }
+  </script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjwVQGYnBytwnab98j0MuB_QSvh2SWI2g&callback=initMap">
+  </script>
+
   <script type="text/javascript">
   //Stop form submitting without validation
     $("#contact-form").submit(function (e) {

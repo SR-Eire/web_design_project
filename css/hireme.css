@@ -1,3 +1,9 @@
+/* Reference for some of the code on this page
+  """  Title: Traversy Media source code
+              Author: Traversy, Brad
+              Date: January 2019
+              Availability: https://www.youtube.com/watch?v=HZv8YHYUHTU&t=169s """*/
+
 /* CSS for the body of the website with an rgba background,
 no margin, color selection, and font family */
 body {
@@ -131,6 +137,7 @@ footer {
   .navbar a {
     display: none;
   }
+
   .navbar a.icon {
     float: right;
     display: block;
@@ -142,11 +149,13 @@ footer {
   .navbar.responsive {
     position: relative;
   }
+
   .navbar.responsive a.icon {
     position: absolute;
     right: 0;
     top: 0;
   }
+
   .navbar.responsive a {
     float: none;
     display: block;

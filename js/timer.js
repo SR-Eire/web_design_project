@@ -1,3 +1,9 @@
+//Reference for some of the code on this page
+/*"""  Title: W3 Schools source code
+              Author: W3 Schools
+              Date: April 2019
+              Availability: https://www.w3schools.com/howto/howto_js_countdown.asp """ */
+
 var i, contact, speed;
 
 i = 0;
